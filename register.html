@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - NaijaDevs Conference 2026</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+
+        <img src="c:\Users\USER\Downloads\Gemini_Generated_Image_nid0kmnid0kmnid0.png" alt="NaijaDevs Conference logo" width="750" height="410">
+
+        <h1>NaijaDevs Conference 2026</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" title="Homepage">Home</a></li>
+                <li><a href="speakers.html" title="See all speakers and the event schedule">Speakers and Schedule</a></li>
+                <li><a href="register.html" title="Register your spot">Register</a></li>
+                <li><a href="venue.html" title="Venue location and travel guide">Venue and Travel</a></li>
+                <li><a href="confirmation.html" title="Registration confirmation page">Confirmation</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h1>Register for NaijaDevs 2026</h1>
+        <p>Fill in the form below to secure your place at the conference. All fields marked with an asterisk (*) are required.</p>
+
+        <!-- ticket availability indicator -->
+        <p>
+            <strong>Ticket Availability:</strong><br>
+            <meter value="420" min="0" max="800" low="160" high="720" optimum="400">420 out of 800 tickets sold</meter>
+            <br>
+            <small>420 of 800 spots have been filled.</small>
+        </p>
+
+        <!-- shows form completion progress (purely decorative at this stage - JS will handle it later) -->
+        <p>
+            <strong>Form Progress:</strong><br>
+            <progress value="0" max="100">0 percent complete</progress>
+        </p>
+
+        <hr>
+
+        <!--
+            The form sends data to confirmation.html using GET.
+            In a real application this would go to a server using POST.
+            For now, GET lets us see the submitted values in the browser URL bar.
+        -->
+        <form action="confirmation.html" method="GET">
+
+            <!-- personal information section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="full-name">Full Name *</label><br>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full_name"
+                    placeholder="e.g. Amaka Okonkwo"
+                    required
+                    autocomplete="name">
+                <br><br>
+
+                <label for="email">Email Address *</label><br>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="yourname@example.com"
+                    required
+                    autocomplete="email">
+                <br><br>
+
+                <label for="phone">Phone Number * (Nigerian format)</label><br>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+2348100047685 or 08100047685"
+                    pattern="(\+234[0-9]{10}|0[789][01][0-9]{8})"
+                    required
+                    autocomplete="tel">
+                <br>
+                <small>Accepted formats: +234XXXXXXXXXX or 0XXXXXXXXXX</small>
+                <br><br>
+
+                <label for="dob">Date of Birth</label><br>
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    min="1944-01-01"
+                    max="2010-12-31">
+                <br><br>
+
+                <!-- hidden input to track which programme this registration came from -->
+                <input type="hidden" name="source" value="ndi-programme-2026">
+
+            </fieldset>
+
+            <br>
+
+            <!-- travel origin section -->
+            <fieldset>
+                <legend>Where Are You Travelling From?</legend>
+
+                <label for="city">Select Your City *</label><br>
+                <select id="city" name="city" required>
+                    <option value="">-- Select a city --</option>
+
+                    <optgroup label="South-West">
+                        <option value="lagos">Lagos</option>
+                        <option value="ibadan">Ibadan</option>
+                        <option value="abeokuta">Abeokuta</option>
+                        <option value="akure">Akure</option>
+                        <option value="osogbo">Osogbo</option>
+                    </optgroup>
+
+                    <optgroup label="South-East">
+                        <option value="enugu">Enugu</option>
+                        <option value="onitsha">Onitsha</option>
+                        <option value="owerri">Owerri</option>
+                        <option value="abakaliki">Abakaliki</option>
+                        <option value="umuahia">Umuahia</option>
+                    </optgroup>
+
+                    <optgroup label="South-South">
+                        <option value="port-harcourt">Port Harcourt</option>
+                        <option value="benin">Benin City</option>
+                        <option value="warri">Warri</option>
+                        <option value="calabar">Calabar</option>
+                        <option value="uyo">Uyo</option>
+                    </optgroup>
+
+                    <optgroup label="North-West">
+                        <option value="kano">Kano</option>
+                        <option value="kaduna">Kaduna</option>
+                        <option value="sokoto">Sokoto</option>
+                        <option value="gusau">Gusau</option>
+                    </optgroup>
+
+                    <optgroup label="North-East">
+                        <option value="maiduguri">Maiduguri</option>
+                        <option value="bauchi">Bauchi</option>
+                        <option value="yola">Yola</option>
+                        <option value="damaturu">Damaturu</option>
+                    </optgroup>
+
+                    <optgroup label="North-Central and FCT">
+                        <option value="abuja">Abuja (FCT)</option>
+                        <option value="ilorin">Ilorin</option>
+                        <option value="lokoja">Lokoja</option>
+                        <option value="makurdi">Makurdi</option>
+                        <option value="minna">Minna</option>
+                        <option value="lafia">Lafia</option>
+                    </optgroup>
+
+                    <optgroup label="Diaspora and International">
+                        <option value="uk">United Kingdom</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="germany">Germany</option>
+                        <option value="other-international">Other International</option>
+                    </optgroup>
+                </select>
+
+            </fieldset>
+
+            <br>
+
+            <!-- ticket type section -->
+            <fieldset>
+                <legend>Choose Your Ticket</legend>
+
+                <label>
+                    <input type="radio" name="ticket" value="early-bird" required>
+                    Early Bird - &#8358;40,000
+                    <small>(Limited spots available)</small>
+                </label>
+                <br>
+
+                <label>
+                    <input type="radio" name="ticket" value="regular">
+                    Regular - &#8358;65,000
+                    <small>(Full 2-day access, lunch both days included)</small>
+                </label>
+                <br>
+
+                <label>
+                    <input type="radio" name="ticket" value="vip">
+                    VIP - &#8358;120,000
+                    <small>(All-access pass, speaker dinner, premium swag bag, front-row seating)</small>
+                </label>
+
+            </fieldset>
+
+            <br>
+
+            <!-- interest areas section -->
+            <fieldset>
+                <legend>Areas of Interest</legend>
+                <p>Select all that apply. This helps us suggest sessions for your schedule.</p>
+
+                <label>
+                    <input type="checkbox" name="interest" value="frontend">
+                    Frontend Development
+                </label>
+                <br>
+
+                <label>
+                    <input type="checkbox" name="interest" value="backend">
+                    Backend Development
+                </label>
+                <br>
+
+                <label>
+                    <input type="checkbox" name="interest" value="mobile">
+                    Mobile Development
+                </label>
+                <br>
+
+                <label>
+                    <input type="checkbox" name="interest" value="ai-ml">
+                    Artificial Intelligence and Machine Learning
+                </label>
+                <br>
+
+                <label>
+                    <input type="checkbox" name="interest" value="devops">
+                    DevOps and Infrastructure
+                </label>
+                <br>
+
+                <label>
+                    <input type="checkbox" name="interest" value="cloud">
+                    Cloud Computing
+                </label>
+
+            </fieldset>
+
+            <br>
+
+            <!-- developer background section -->
+            <fieldset>
+                <legend>About You</legend>
+
+                <!-- datalist lets the user pick from suggestions or type their own -->
+                <label for="language">Primary Programming Language</label><br>
+                <input
+                    type="text"
+                    id="language"
+                    name="language"
+                    list="languages-list"
+                    placeholder="Start typing a language..."
+                    autocomplete="off">
+                <datalist id="languages-list">
+                    <option value="JavaScript">
+                    <option value="TypeScript">
+                    <option value="Python">
+                    <option value="Java">
+                    <option value="Kotlin">
+                    <option value="Swift">
+                    <option value="Dart">
+                    <option value="Go">
+                    <option value="Rust">
+                    <option value="C++">
+                    <option value="C#">
+                    <option value="PHP">
+                    <option value="Ruby">
+                    <option value="Solidity">
+                    <option value="R">
+                </datalist>
+                <br><br>
+
+                <label for="years-exp">Years of Coding Experience</label><br>
+                <input
+                    type="number"
+                    id="years-exp"
+                    name="years_experience"
+                    min="0"
+                    max="50"
+                    placeholder="e.g. 3">
+                <br><br>
+
+                <!-- range slider with an output element showing the current value -->
+                <label for="exp-level">Rate Your Experience Level (1 = Beginner, 10 = Expert):</label>
+                <output for="exp-level" id="exp-output">5</output>
+                <br>
+                <input
+                    type="range"
+                    id="exp-level"
+                    name="experience_level"
+                    min="1"
+                    max="10"
+                    value="5"
+                    oninput="document.getElementById('exp-output').value = this.value">
+                <br><br>
+
+                <label for="learning-goals">What do you hope to learn at NaijaDevs 2026?</label><br>
+                <textarea
+                    id="learning-goals"
+                    name="learning_goals"
+                    rows="5"
+                    cols="50"
+                    placeholder="Tell us what sessions excite you, what problems you are trying to solve, or who you are hoping to meet...">
+                </textarea>
+                <br><br>
+
+            </fieldset>
+
+            <br>
+
+            <!-- personalisation section for fun extras -->
+            <fieldset>
+                <legend>Personalise Your Badge</legend>
+
+                <label for="badge-colour">Pick Your Badge Accent Colour:</label><br>
+                <input
+                    type="color"
+                    id="badge-colour"
+                    name="badge_colour"
+                    value="#008751"
+                    title="Choose a colour for your name badge">
+                <small>Your name tag will be printed with this colour as an accent.</small>
+                <br><br>
+
+                <label for="profile-photo">Upload a Profile Photo (for your badge):</label><br>
+                <input
+                    type="file"
+                    id="profile-photo"
+                    name="profile_photo"
+                    accept="image/*">
+                <br>
+                <small>Accepted: JPG, PNG, WebP. Maximum file size: 5MB.</small>
+
+            </fieldset>
+
+            <br>
+
+            <button type="submit">Complete Registration</button>
+            &nbsp;
+            <button type="reset">Clear Form</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+
+        <h4>NaijaDevs Conference 2026</h4>
+
+        <p>
+            Email: <a href="mailto:hello@naijadevs.ng">hello@naijadevs.ng</a>
+            &nbsp;|&nbsp;
+            Phone: <a href="tel:+2348001234567">+234 800 123 4567</a>
+        </p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="speakers.html">Speakers</a> |
+            <a href="venue.html">Venue</a>
+        </p>
+
+        <p><small>&copy; 2026 NaijaDevs Conference. All rights reserved.</small></p>
+
+    </footer>
+
+</body>
+</html>
